@@ -1,0 +1,11 @@
+LOAD LOCAL DATA INFILE '/home/atittan/Downloads/~' 
+INTO TABLE senti 
+FIELDS TERMINATED BY ',' 
+
+
+#utf8~
+
+
+#ENCLOSED BY '"'
+#LINES TERMINATED BY '\n'
+#IGNORE 1 ROWS;
