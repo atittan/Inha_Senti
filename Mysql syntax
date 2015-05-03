@@ -2,6 +2,8 @@ LOAD LOCAL DATA INFILE '/home/atittan/Downloads/~'
 INTO TABLE senti 
 FIELDS TERMINATED BY ',' 
 
+http://wsyang.com/2013/06/how-to-connect-r-with-mysql/
+
 
 #utf8~
 
