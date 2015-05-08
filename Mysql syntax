@@ -12,3 +12,7 @@ http://www.google.com/patents/WO2012134180A2?cl=ko
 #ENCLOSED BY '"'
 #LINES TERMINATED BY '\n'
 #IGNORE 1 ROWS;
+
+irb -> 모르는 method 테스트 가능
+
+object.methods 사용 가능한 모든 method 출력
