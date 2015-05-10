@@ -1,0 +1,76 @@
+#include <stdio.h>
+#include <unistd.h>
+#include <fcntl.h>
+
+        int x;
+        x=open("f1", O_RDONLY, 00777);
+        int y;
+        y=dup(x);
+        printf("x:%d y:%d\n", x, y);
+        char buf[50];
+        int k=read(x, buf, 5);
+        buf[k]=0;
+        printf("buf:%s\n", buf);
+        k=read(y, buf, 5);
+        buf[k]=0;
+        printf("buf:%s\n", buf);
+
+#########################################3
+
+#include <stdio.h>
+#include <unistd.h>
+#include <string.h>
+#include <stdlib.h>
+
+void main(){
+        int x,y,status, i;
+        char buf[50];
+        char *argv[10];
+        char *amph, *input;
+        int dont_wait;
+
+        for(i=0;i<5;i++){
+                printf("$");
+                gets(buf);
+                if(strcmp(buf,"exit")==0)
+                        break;
+
+                input=strtok(buf," ");
+                sprintf(argv[0],"/bin/%s",input);
+
+                dont_wait=0;
+                //printf("%s\n",argv[0]);
+                if(amph=strtok(NULL, " ")){
+                        printf("%s\n",amph);
+                        if ( strcmp(amph,"&")==0 ){
+                                argv[1]=0;
+                                dont_wait = 1;
+                                printf("option : %s\n",amph);
+
+                        }else{
+                                printf("normal option\n");
+                                argv[1]=amph;
+                                argv[2]=0;
+                        }
+
+                }else argv[1]=0;
+//              if(strcmp(argv[1],"&")==0)
+//              printf("%s",argv[1]);
+
+                x=fork();
+                if (x==0){
+                        printf("I am child to execute %s \n", buf);
+                        y=execve(argv[0], argv, 0);
+                        if (y<0){
+                                perror("exec failed");
+                                exit(1);
+                        }
+                }else{
+                if(dont_wait)
+                        printf("don't wait\n");
+                 else wait(&status);
+                }
+
+
+        }
+}
