@@ -16,3 +16,10 @@ http://www.google.com/patents/WO2012134180A2?cl=ko
 irb -> 모르는 method 테스트 가능
 
 object.methods 사용 가능한 모든 method 출력
+
+slices <- c(30,30,20,10,5,30,20,10,10,15,25,15) 
+lbls <- c("혐오", "분노", "걱정", "슬픔", "지루함", "무관심", "흥미", "좋음", "신남", "행복”,”흥분")
+pct <- round(slices/sum(slices)*100)
+lbls <- paste(lbls, pct)
+lbls <- paste(lbls,"%",sep="")
+pie(slices,labels = lbls, col=rainbow(length(lbls)),main="Sentiments of Article Comments",clockwise=FALSE,init.angle=90)
