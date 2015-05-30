@@ -5,4 +5,23 @@
 #normalize
 
 
+
 #최후: 아예 웹페이지로 만들기
+
+
+05.30
+디비에 댓글내용  txt 추가
+각 댓글끼리의 분위기를 비교
+
+
+행복 hapinees
+슬픔 sadness
+화남 anger
+놀람(긍정,amazed)
+놀람(부정,당황,공포 startled)
+흥미 interested
+무관심 apathy
+
+
+
+
