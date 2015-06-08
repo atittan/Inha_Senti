@@ -23,5 +23,6 @@
 무관심 apathy
 
 
+https://www.igvita.com/2008/01/07/support-vector-machines-svm-in-ruby/
 
 
