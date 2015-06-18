@@ -1,5 +1,5 @@
-LOAD LOCAL DATA INFILE '/home/atittan/Downloads/~' 
-INTO TABLE senti 
+LOAD DATA LOCAL INFILE '/home/atittan/Downloads/~' 
+INTO TABLE dictionaries 
 FIELDS TERMINATED BY ',' 
 
 http://wsyang.com/2013/06/how-to-connect-r-with-mysql/
